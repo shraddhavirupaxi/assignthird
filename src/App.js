@@ -6,12 +6,13 @@ import UserOutput from './UserOutput/UserOutput';
 
 class App extends Component {
   state = {
-    username : ''
+    username : '',
+    password: ''
 
   }
   
   usernameChangedHandler = (event) =>{
-    this.setState({ username:event.target.value})
+    this.setState({ username:event.target.value, password:event.target.value})
 
   }
   render(){
@@ -22,8 +23,12 @@ class App extends Component {
             changed={this.usernameChangedHandler}
             currentname={this.state.username} />
             <UserOutput username={this.state.username}/>
-            <UserOutput username="xam"/>
-
+            
+           <UserInput 
+            changed={this.usernameChangedHandler}
+            currentname={this.state.password} />
+            <UserOutput username={this.state.password}/>
+        
             </div> 
             
        
